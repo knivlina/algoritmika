@@ -1,0 +1,332 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+<title>Swedish Treebank, Version 1.1</title>
+</head><body bgcolor="#ffffff">
+<img src="tree.jpg">
+
+<h1>Swedish Treebank</h1>
+
+<p>The Swedish Treebank is a syntactically annotated corpus of Swedish, created by merging, harmonizing
+and partially reannotating two existing corpora, Talbanken [<a href="#T1">1</a>, <a href="#T2">2</a>] 
+and the Stockholm-Umeå Corpus (SUC) [<a href="#SUC1">3</a>,<a href="#SUC">4</a>]. The Swedish Treebank
+has been created through a collaboration between the Department of Linguistics and Philology at 
+Uppsala University and the School of Mathematics and Systems Engineering at Växjö University.
+The treebank is distributed by <a href="http://spraakbanken.gu.se/">Språkbanken</a> at the 
+University of Gothenburg and is freely available for research and education but requires the user 
+to have a license for SUC 2.0. </p>
+
+<p>Below we begin by describing the overall process of merging, harmonizing and reannotating the two source
+corpora, and the way in which this process has determined properties of the synthesized treebank. We then 
+go on to describe the following aspects of the treebank and its annotation:</p>
+<ul>
+ <li><a href="#token">Tokenization and sentence segmentation</a></li>
+ <li><a href="#morph">Morphological annotation (parts of speech and morphological features)</a></li>
+ <li><a href="#synt">Syntactic annotation (phrase structure and grammatical functions, dependency structure)</a></li>
+ <li><a href="#enc">Document structure and encoding formats (TIGER-XML, CoNLL dependency format)</a></li>
+</ul>
+<p>We conclude with acknowledgments and references.</p>
+
+<h2>Synthesizing the Swedish Treebank from Talbanken and SUC</h2>
+
+<p><b>Talbanken:</b> Talbanken is a syntactically annotated corpus, containing both written and 
+spoken Swedish, produced in the 1970s at the Department of Scandinavian Languages, 
+Lund University, by a group led by Ulf Teleman. In total, the corpus contains about 
+350,000 tokens, divided into 200,000 tokens of written text (professional prose and
+high school essays) and 150,000 tokens of spoken language (interviews, debates, and 
+informal conversations). The original annotation, known as MAMBA and described in [<a href="#MAMBA">5</a>], 
+consists 
+of two layers: a lexical layer, with parts of speech and morphological features, 
+and a syntactic layer, with a relatively flat phrase structure and grammatical 
+functions. </p>
+
+<p><b>SUC:</b> SUC is a balanced corpus of written Swedish, modeled after the Brown 
+Corpus and similar corpora
+for English, developed at Stockholm University and at Umeå University 
+in a project led by Gunnel Källgren and Eva Ejerhed.
+The corpus consists of 1.2 million tokens of text from a variety of 
+different genres, the corpus encoding follows the guidelines of the 
+Text Encoding Initiative (TEI), and the annotation includes lemmatization,
+parts of speech, morphological features, and named entities.</p>
+
+<p>In order to merge and harmonize these two corpora into the 
+Swedish Treebank, we have adopted the following overall strategy:</p>
+<ul>
+<li>Harmonize tokenization and sentence segmentation by making Talbanken
+conform to the principles of SUC.</li>
+<li>Replace the lexical annotation layer in Talbanken with a morphological 
+annotation according to the SUC guidelines.</li>
+<li>Convert the syntactic annotation layer in Talbanken to a more modern format 
+and annotate SUC according to the (converted) Talbanken guidelines.</li>
+</ul> 
+<p>The overall guiding principle has been to modify SUC as little as possible (given
+that it is the larger corpus and also a de facto standard for Swedish) and to make
+Talbanken conform to SUC instead of the other way round. The only place where this
+is not possible is for the syntactic annotation layer, which is missing in SUC.</p>
+
+<p>Version 1.1 of the Swedish Treebank includes all of SUC but only the professional 
+prose section of Talbanken. The annotation is limited to morphology and syntax.
+The unified morphological annotation consists of basic parts of speech and morphological 
+features following the SUC annotation guidelines. (In addition, the SUC part contains
+lemmas, and the Talbanken part contains the original lexical tags according to MAMBA.)
+The syntactic annotation mainly consists of phrase structure and grammatical functions 
+but has also been converted automatically to dependency structure using head percolation 
+rules. The status of harmonization and manual revision is as follows:
+</p>
+<ul>
+ <li>Tokenization and sentence segmentation in Talbanken has been modified to fit the principles of SUC.</li>
+<li>Morphological annotation has been manually checked and revised in both Talbanken and SUC.</li>
+<li>Syntactic annotation of phrase structure and grammatical functions has been partially checked 
+in Talbanken (after automatic conversion from the old format). In SUC the syntactic annotation has been
+performed automatically using a parser trained on Talbanken and has been manually revised only in a small 
+subset consisting of about 20,000 tokens. In addition, syntactic structures that clearly deviate from the
+annotation guidelines have been flagged automatically as probable parsing errors throughout the SUC part
+of the treebank. The conversion to dependency structure, finally, is completely automatic 
+and has not been manually validated at all.</li>
+</ul>
+<p>In the following three sections, we give a brief description of the guidelines for tokenization 
+and sentence segmentation, morphological annotation, and syntactic annotation, respectively.</p>
+
+<a name="token"><h2>Tokenization and Sentence Segmentation</h2></a>
+
+<p>Tokenization follows the principles of SUC. Words separated by 
+whitespace or punctuation in the original text are considered separate tokens, as are 
+punctuation marks. Exception is made for abbreviations containing punctuation and/or 
+whitespace, which are kept together as one token with whitespace replaced by an underscore,
+e.g., <code>t.ex.</code> and <code>t_ex</code>.</p>
+
+<p>Sentences are segmented according to the principles of SUC, where a sentence is treated as 
+the longest sequence of tokens between two major delimiters, defined as one of the punctuation
+marks <code>.</code>, <code>?</code>, <code>!</code>, <code>:</code>, or combinations thereof. In addition, list items are treated
+as separate sentences.</p>
+
+<a name="morph"><h2>Morphological Annotation</h2></a>
+
+<p>The morphological annotation consists of part-of-speech categories and morphological features, following
+the principles of SUC. Guidelines for these categories can be found in [<a href="#T7">6</a>], except for
+the PL category (verb particle), which was not part of the original system but is used in both releases
+of the SUC corpus. For PL we have relied on the actual annotation in SUC 2.0 and on internal documentation
+from the SUC project. In the Talbanken part we have also retained the original lexical annotation layer
+from MAMBA, and in the SUC part we have retained the annotation of lemmas. 
+Besides describing the different category systems (and the principles governing the use of the PL
+category), we summarize the main principles used for the manual revision of the morphological annotation in Talbanken.</p>
+<ul>
+<li><a href="pos.html"> Part-of-speech categories</a></li>
+<li><a href="morph.html">Morphological features</a></li>
+<li><a href="PL.html">Criteria for use of the PL tag </a></li>
+<li><a href="MAMBAlex.html">MAMBA lexical categories</a></li>
+<li><a href="morph_revision.html">Principles for manual revision of morphological annotation in Talbanken</a></li>
+</ul>
+<p>For further information about the part-of-speech categories and the morphological features, 
+we refer to [<a href="#T7">6</a>,<a href="#T8">7</a>]. For a description of the lexical
+categories inherited from MAMBA, we refer to [<a href="#MAMBA">4</a>].</p>
+
+<a name="synt"><h2>Syntactic Annotation</h2></a>
+
+<p>The primary syntactic annotation of each sentence takes the form of a constituent structure, where 
+constituents are labeled with structural categories (phrase types), 
+while edges connecting constituents are labeled with functional categories
+(grammatical functions) indicating the role of the lower constituent within 
+the higher. The set of structural categories used is a small set of conventional
+phrase types, such as S for sentence/clause, NP for noun phrase, VP for verb
+phrase, etc. The set of functional categories is inherited from the MAMBA 
+annotation scheme with a small extension for structures that were not annotated 
+in the original version of Talbanken. This annotation has been projected to SUC by 
+training a parser on Talbanken, parsing the entire SUC corpus, and manually revising
+a small sample of about 20,000 tokens to be used for evaluation purposes, which we will
+refer to as the gold standard section of SUC. Sentences
+that have not been revised manually have been flagged automatically in case they 
+contain configurations of structural and functional categories that are not licensed 
+by the annotation scheme. (This is to allow users who are concerned about the quality
+of annotation to filter out sentences that contain either a certain number of flags 
+or a specific type of flag.) 
+Finally, we have automatically converted the constituent structure annotation in both Talbanken 
+and SUC, using head percolation rules to determine the head of each phrase and using a 
+subset of the grammatical functions to label dependency edges.
+Besides describing the different category systems, we summarize the main principles 
+used for the manual revision of the syntactic annotation in SUC.</p>
+<ul>
+<li><a href="PS.html">Structural categories (phrase types)</a></li>
+<li><a href="GF.html">Functional categories (grammatical functions)</a></li>
+<li><a href="flags.html">Flags indicating deviant structures (probable annotation errors)</a></li>
+<li><a href="headrules.html">Head percolation rules for dependency conversion</a></li>
+<li><a href="dep.html">Dependency labels (subset of functional categories)</a></li>
+<li><a href="synt_revision.html">Principles for manual revision of syntactic annotation in SUC</a></li>
+</ul>
+<p>For a detailed description of the functional categories inherited from MAMBA,
+we refer to [<a href="#MAMBA">4</a>].</p>
+
+<a name="enc"><h2>Document Structure and Encoding Formats</h2></a>
+
+<p>Version 1.1 of the Swedish Treebank is distributed in three different forms with respect to document structure:
+<ul>
+ <li><b>Document-by-document:</b> One file for each individual document in the original distribution of Talbanken
+(85 documents) and SUC (500 documents), respectively.</li>
+ <li><b>Train-test split:</b> Talbanken and SUC separately split into about 20,000 tokens for evaluation and the rest of the data
+for training of NLP systems. The evaluation data is manually revised in both cases and consists of the gold standard section of SUC together with a matching subset of Talbanken;
+the training data is manually revised for Talbanken but only automatically parsed (and flagged) for SUC.</li>
+  <ul>
+   <li><a href="eval.html">Description of the evaluation set</a></li>
+  </ul>
+ <li><b>All-in-one:</b> One file for each of Talbanken and SUC containing all the available data (suitable for corpus searches).</li>
+</ul>
+
+<p>The Swedish Treebank is primarily encoded in 
+<a href="http://www.ims.uni-stuttgart.de/projekte/TIGER/TIGERSearch/doc/html/TigerXML.html">TIGER-XML</a>, 
+which supports easy browsing using 
+<a href="http://www.ims.uni-stuttgart.de/projekte/TIGER/TIGERSearch/">TIGERSearch</a>, 
+a GUI-based tool with advanced search facilities. 
+Here is an example of an annotated sentence, as it appears in TIGERSearch:</p>
+
+<img src="P103_14.png">
+
+<p>The corresponding TIGER-XML encoding is the following:</p>
+<pre>
+    &lt;s id="P103_14"&gt;
+      &lt;graph root="P103_14_507"&gt;
+        &lt;terminals&gt;
+          &lt;t id="P103_14_1" word="För" lemma="--" pos="PP" morph="--" mambalex="PR" flags="--" /&gt;
+          &lt;t id="P103_14_2" word="telefonrådfrågning" lemma="--" pos="NN" morph="UTR SIN IND NOM" mambalex="VN  SS" flags="--" /&gt;
+          &lt;t id="P103_14_3" word="betalar" lemma="--" pos="VB" morph="PRS AKT" mambalex="VVPS" flags="--" /&gt;
+          &lt;t id="P103_14_4" word="försäkringskassan" lemma="--" pos="NN" morph="UTR SIN DEF NOM" mambalex="NNDDSS" flags="--" /&gt;
+          &lt;t id="P103_14_5" word="4" lemma="--" pos="RG" morph="NOM" mambalex="RO" flags="--" /&gt;
+          &lt;t id="P103_14_6" word="kronor" lemma="--" pos="NN" morph="UTR PLU IND NOM" mambalex="NN" lemma="--" flags="--" /&gt;
+          &lt;t id="P103_14_7" word="till" lemma="--" pos="PP" morph="--" mambalex="PR" flags="--" /&gt;
+          &lt;t id="P103_14_8" word="sjukvårdshuvudmannen" lemma="--" pos="NN" morph="UTR SIN DEF NOM" mambalex="NNDDSS" lemma="--" flags="--" /&gt;
+          &lt;t id="P103_14_9" word="." lemma="--" pos="MAD" morph="--" mambalex="IP" flags="--" /&gt;
+        &lt;/terminals&gt;
+        &lt;nonterminals&gt;
+          &lt;nt id="P103_14_507" cat="ROOT" flags="--"&gt;
+            &lt;edge idref="P103_14_506" label="MS" /&gt;
+          &lt;/nt&gt;
+          &lt;nt id="P103_14_506" cat="S" flags="--"&gt;
+            &lt;edge idref="P103_14_505" label="OA" /&gt;
+            &lt;edge idref="P103_14_3" label="FV" /&gt;
+            &lt;edge idref="P103_14_504" label="SS" /&gt;
+            &lt;edge idref="P103_14_503" label="OO" /&gt;
+            &lt;edge idref="P103_14_502" label="OA" /&gt;
+            &lt;edge idref="P103_14_9" label="IP" /&gt;
+          &lt;/nt&gt;
+          &lt;nt id="P103_14_505" cat="PP" flags="--"&gt;
+            &lt;edge idref="P103_14_1" label="PR" /&gt;
+            &lt;edge idref="P103_14_501" label="PA" /&gt;
+          &lt;/nt&gt;
+          &lt;nt id="P103_14_504" cat="NP" flags="--"&gt;
+            &lt;edge idref="P103_14_4" label="HD" /&gt;
+          &lt;/nt&gt;
+          &lt;nt id="P103_14_503" cat="NP" flags="--"&gt;
+            &lt;edge idref="P103_14_5" label="DT" /&gt;
+            &lt;edge idref="P103_14_6" label="HD" /&gt;
+          &lt;/nt&gt;
+          &lt;nt id="P103_14_502" cat="PP" flags="--"&gt;
+            &lt;edge idref="P103_14_7" label="PR" /&gt;
+            &lt;edge idref="P103_14_500" label="PA" /&gt;
+          &lt;/nt&gt;
+          &lt;nt id="P103_14_501" cat="NP" flags="--"&gt;
+            &lt;edge idref="P103_14_2" label="HD" /&gt;
+          &lt;/nt&gt;
+          &lt;nt id="P103_14_500" cat="NP" flags="--"&gt;
+            &lt;edge idref="P103_14_8" label="HD" /&gt;
+          &lt;/nt&gt;
+        &lt;/nonterminals&gt;
+      &lt;/graph&gt;
+    &lt;/s&gt;
+</pre>
+<p>A sentence (&lt;s&gt;) consists of a syntax graph (&lt;graph&gt;), consisting of terminals (&lt;t&gt;) and 
+nonterminals (&lt;nt&gt;) connected by edges (&lt;edge&gt;). Terminal nodes have the following attribues:</p>
+<ul>
+ <li><b>id:</b> Unique identifier</li>
+ <li><b>word:</b> Word form</li>
+ <li><b>pos:</b> SUC part-of-speech tag</li>
+ <li><b>morph:</b> SUC morphological features</li>
+ <li><b>mambalex:</b> MAMBA lexical category (undefined in SUC part)</li>
+ <li><b>lemma:</b> Lemma (undefined in Talbanken part)</li>
+ <li><b>flags:</b> Flags indicating how the annotation near this node may be erroneous</li>
+</ul>
+<p>Nonterminal nodes have the following attributes:</p>
+<ul>
+ <li><b>id:</b> Unique identifier</li>
+ <li><b>cat:</b> Structural category of phrase rooted at this node</li>
+ <li><b>flags:</b> Flags indicating how the annotation near this node may be erroneous</li>
+</ul>
+<p>Edges have the following attributes:</p>
+<ul>
+ <li><b>idref:</b> Reference to child node id (every edge belongs to a parent node)</li>
+ <li><b>label:</b> Functional category of phrase/word rooted at the child node</li>
+</ul>
+<p>Missing attribute values are consistently marked by "--".</p>
+<p>The dependency structure version of the Swedish Treebank is distributed in the 
+<a href="http://nextens.uvt.nl/~conll/#dataformat">CoNLL format</a>, which has become
+a de facto standard for dependency treebanks and can be browsed using (for example) 
+<a href="http://w3.msi.vxu.se/~jni/malteval/">MaltEval</a>. Here is the same annotated sentence 
+as it appears in MaltEval:</p>
+
+<img src="Gold-standard_s177.png">
+
+<p>The corresponding CoNLL encoding looks as follows:</p>
+<pre>
+1	För	_	PP	PP	_	3	OA	
+2	telefonrådfrågning	_	NN	NN	UTR|SIN|IND|NOM	1	PA	
+3	betalar	_	VB	VB	PRS|AKT	0	ROOT	
+4	försäkringskassan	_	NN	NN	UTR|SIN|DEF|NOM	3	SS	
+5	4	_	RG	RG	NOM	6	DT	
+6	kronor	_	NN	NN	UTR|PLU|IND|NOM	3	OO	
+7	till	_	PP	PP	_	3	OA	
+8	sjukvårdshuvudmannen	_	NN	NN	UTR|SIN|DEF|NOM	7	PA	
+9	.	_	MAD	MAD	_	3	IP	
+</pre>
+<p>The meaning of the eight columns is as follows:</p>
+<ol>
+<li><b>ID:</b> Running token ID</li>
+<li><b>FORM:</b> Word form</li>
+<li><b>LEMMA:</b> Lemma (missing in Version 1.1)</li>
+<li><b>CPOSTAG:</b> Coarse-grained part-of-speech tag</li>
+<li><b>POSTAG:</b> Fine-grained part-of-speech tag (same as CPOSTAG in Version 1.1)</li>
+<li><b>FEATS:</b> List of morphological features</li>
+<li><b>HEAD:</b> ID of syntactic head</li>
+<li><b>DEPREL:</b> Dependency relation to head (grammatical function)</li>
+</ol>
+<p>Missing values are consistently marked by "_".</p>
+
+<h2>Acknowledgments</h2>
+
+<p>We gratefully acknowledge the work done by the original creators of Talbanken at Lund University 
+[<a href="#T1">1</a>, <a href="#T2">2</a>, <a href="#MAMBA">5</a>, <a href="#T3">8</a>, 
+<a href="#T4">9</a>, <a href="#T5">10</a>, <a href="#T8">11</a>] 
+and of SUC at Stockholm University and Umeå University [<a href="#SUC1">6</a>, <a href="#SUC">3</a>, <a href="#T7">5</a>, <a href="#T8">7</a>], 
+without which the Swedish Treebank 
+clearly would not have existed at all. The work on synthesizing the treebank has been carried out by 
+Joakim Nivre, Beáta Megyesi, Sofia Gustafson-Capková, Filip Salomonsson, Bengt Dahlqvist,
+and Anna Sågvall Hein at Uppsala University and by Johan Hall and Jens Nilsson at Växjö
+University. We are grateful to all the participants of the Swedish Treebank workshop held 
+in conjunction with the Swedish Language Technology Conference in Stockholm, November 21, 2009,
+for valuable feedback. In particular, we want to thank our special commentators Lars Ahrenberg,
+Lars Borin, Elisabet Engdahl, and Janne Bondi Johannessen.
+Finally, we want to thank Lars Borin and his team at Språkbanken for their help in 
+distributing the Swedish Treebank. </p>
+
+<h2>References</h2>
+
+<ol>
+<li id="T1">Einarsson, Jan. 1976. Talbankens skriftspråkskonkordans. Lund University: 
+Department of Scandinavian Languages.</li>
+<li id="T2">Einarsson, Jan. 1976. Talbankens talspråkskonkordans. Lund University:
+Department of Scandinavian Languages.</li>
+<li id="SUC1">Stockholm-Umeå Corpus SUC 1.0. 1996. Stockholm University:
+Department of Linguistics and University of Umeå: Department of linguistics.</li>
+<li id="SUC">Stockholm-Umeå Corpus SUC 2.0. 2006. Stockholm University:
+Department of Linguistics.</li>
+<li id="MAMBA">Teleman, Ulf. 1974. Manual för grammatisk beskrivning av talad och
+skriven svenska. Studentlitteratur.</li>
+<li id="T7">Ejerhed, Eva; Källgren, Gunnel; Wennstedt, Ola and Åström, Magnus. 1992. The Linguistic Annotation System of the Stockholm-Umeå Corpus Project. Report No 33. University of Umeå: Department of Linguistics.
+Department of Scandinavian Languages.</li>
+<li id="T8">Källgren, Gunnel. 2006. Documentation of the Stockholm - Umeå Corpus. In: Manual of the Stockholm Umeå Corpus version 2.0. Sofia Gustafson-Capková and Britt Hartmann (eds). Stockholm University: Department of Linguistics.</li>
+<li id="T3">Margareta Westman. 1974. Bruksprosa. Liber.</li>
+<li id="T4">Nils Jörgensen. 1976. Meningsbyggnaden i talad svenska. Studentlitteratur.</li>
+<li id="T5">Tor G. Hultman and Margareta Westman. 1977. Gymnasistsvenska. Liber.</li>
+<li id="T6">Jan Einarsson. 1978. Talad och skriven svenska. Lund University:
+Department of Scandinavian Languages.</li>
+
+</ol>
+
+</body></html>

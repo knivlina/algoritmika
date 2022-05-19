@@ -1,0 +1,37 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+
+<title>Principles for the Manual Revision of Syntactic Annotation in SUC</title>
+</head><body bgcolor="#ffffff">
+
+<h2>Principles for the Manual Revision of Syntactic Annotation in SUC</h2>
+
+<p>The syntactic annotation was manually corrected in the gold standard section of the SUC part of the Swedish Treebank according to the trees in the Talbanken part. This means that the functional categories were checked and corrected according to the MAMBA annotation scheme (Teleman, 1983), and the structural categories were corrected according to the derived structural categories in the Talbanken part. </p>
+
+<p>In the revision work two approaches were used: i) sentences with frequent errors, possible to find automatically, were identified and corrected (a transversal revision over error types) and ii) sentence by sentence was checked and corrected (a longitudinal approach). We started with the first approach. However, in addition to the identified error type, also the remaining part of the sentence was checked and corrected. When the most frequent error types were checked, the revision work continued sentence by sentence.</p>
+
+<p>Frequent error types were:</p>
+<ul>
+ <li>A conjunction under a unary node</li>
+ <li>Two subjects in a sentence</li>
+ <li>Two objects in a sentence</li>
+</ul>
+<p>Error types like these often indicated more errors higher up in the trees, i.e., closer to the root node. In addition to the error types concerning grammatical functions above, we have also checked the expansions of the syntactic categories, e.g., that an NP or a PP has plausible daughters.  </p>
+
+<h3>Principles for Structural Categories</h3>
+
+<p>In the principles below we have in general described which functional categories a phrase minimally must contain in order to be of a given phrase type. Thus, in case of S a minimal requirement is a finite verb (with one exception). This means that a phrase of type S of course could contain other categories, such as a subject, a direct object, etc. However, such an extended list has not been made here.</p>
+<ul>
+ <li>A complete tree (ROOT) should contain one or more macro-syntagm (MS) and could contain punctuation.</li>
+ <li>A clause (S) should contain one finite verb (FV), unless elliptical. For example, the finite verb can regularly be ellided in Swedish subordinate clauses containing a subject (SS) and a non-finite verb phrase (VG), e.g., <i>Jag såg att hon (hade) gått hem</i> (literally: "I saw that she (had) gone home").</li>
+ <li>A verb phrase (VP) should contain one non-finite verb (IV). (Note that there are no finite VPs in the annotation.)</li>
+ <li>A noun phrase (NP) should contain one head (HD), unless ellipical. The head should normally be a noun or a pronoun but could be, e.g., a participle used in a nominal function, e.g., <i>alla partiets förtroendevalda</i> (literally: "all the-party's representative-elected"). In cases of ellipsis, the head can be absent, e.g., <i>Det röda huset och det gula (huset) är nya</i> (literally: "The red house and the yellow (house) are new"). Determiners and different types of attributes occur as modifiers.</li> 
+ <li>Prepositional phrases (PP) should contain one preposition (PR) and one prepositional complement (PA). In cases of ellipsis the complement could be absent.</li>
+ <li>Adjective phrases (AP) should contain one head (HD), which should normally be an adjective or a participle (but can sometimes be categorized as a pronoun according to the SUC guidelines). Adverbials occur as modifiers.</li> 
+ <li>Adverb phrases (AVP) should contain one head (HD), which should be an adverb or compound adverbial expression. Adverbials occur as modifiers.</li>
+ <li>Other phrases (XP) cover all instances of phrase-like units that are not covered by the phrases above, e.g., multi-word expressions, multi-word name expressions or coordination of phrases of different types.</li>
+ <li>Coordination: A coordinated phrase always contain two or more instances of the same phrase type together with a conjunction or a puncuation mark that could function as a conjunction, e.g. [NP [NP ++ NP]] where ++ is the functional category for a coordinating conjunction. In cases where the conjuncts are of different phrase types, the mother is annotated XP: [XP [NP ++ AP]]. All phrases except ROOT can be coordinated.</li>
+</ul>
+
+</body></html>

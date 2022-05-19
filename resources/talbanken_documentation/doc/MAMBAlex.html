@@ -1,0 +1,123 @@
+<HTML>
+
+<HEAD>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<TITLE>Lexical categories in MAMBA</TITLE>
+</HEAD>
+
+<body text="#000000" vlink="#551a8b" alink="#ff0000" link="#0000ee" bgcolor="#FFFFFF">
+
+<h1>Lexical categories in MAMBA</h1>
+
+Lexical categories in MAMBA consist of a two-character part-of-speech tag,
+optionally followed by up to three two-character tags indicating additional
+features (mainly morphosyntactic properties). The following table lists 
+all part-of-speech tags, as well as feature tags that can cooccur with a
+particular group of part-of-speech tags.
+<p>
+<table border=1 cellpadding=3 cellspacing=3>
+<tr><td><b>Nouns</b><td><td><b>Features</b></tr>
+<tr><td>PN<td>Proper name<td>DD<td>Definite (suffix)<td>HH<td>Person<td>GG<td>Genitive</tr>
+<tr><td>MN<td>Meta-noun<td><td><td>HS<td>Compound (person)</tr>
+<tr><td>AN<td>Adjectival noun<td><td><td>SS<td>Compound (non-person)</tr>
+<tr><td>VN<td>Verbal noun</tr>
+<tr><td>NN<td>Other noun</tr>
+<tr><td><b>Pronouns</b></td><td><td><b>Features</b></tr>
+<tr><td>PO<td>Pronoun<td>PP<td>1st & 2nd person<td>HH<td>Person<td>GG<td>Genitive</tr>
+<tr><td><td><td>DP<td>3rd person (definite)<td><td><td>AA<td>Object form</tr>
+<tr><td><td><td>CP<td>Reciprocal<td><td><td><td></tr>
+<tr><td><td><td>XP<td>Reflexive<td><td><td><td></tr>
+<tr><td><td><td>OP<td>Impersonal "det" (it)<td><td><td><td></tr>
+<tr><td><td><td>KP<td>Comparative<td><td><td><td></tr>
+<tr><td><td><td>SU<td>Superlative<td><td><td><td></tr>
+<tr><td><td><td>FP<td>Interrogative<td><td><td><td></tr>
+<tr><td><td><td>NP<td>Negative<td><td><td><td></tr>
+<tr><td><td><td>RP<td>Relative<td><td><td><td></tr>
+<tr><td><td><td>TP<td>Total<td><td><td><td></tr>
+<tr><td><td><td>ZP<td>Other<td><td><td><td></tr>
+<tr><td><b>Numerals</b></td><td><td><b>Features</b></tr>
+<tr><td>EN<td>Indefinite article or numeral "en", "ett" (one)<td>OT<td>Ordinal<td>HH<td>Person<td>GG<td>Genitive</tr>
+<tr><td>RO<td>Other numeral</tr>
+<tr><td><b>Adjectives</b></td><td><td><b>Features</b></tr>
+<tr><td>AJ<td>Adjective<td>KP<td>Comparative<td>HH<td>Person<td>GG<td>Genitive</tr>
+<tr><td><td><td>SU<td>Superlative</tr>
+<tr><td><b>Verbs</b></td><td><td><b>Features</b></tr>
+<tr><td>AV<td>The verb "vara" (be)<td>PS<td>Present<td>SM<td>Compound<td>PA<td>Passive</tr>
+<tr><td>BV<td>The verb "bli(va)" (become)<td>PT<td>Preterite</tr>
+<tr><td>HV<td>The verb "ha(va)" (have)<td>IP<td>Imperative</tr>
+<tr><td>WV<td>The verb "vilja" (want)<td>PK<td>Preterite subjunctive</tr>
+<tr><td>QV<td>The verb "kunna" (can)<td>OP<td>Present subjunctive</tr>
+<tr><td>MV<td>The verb "måste" (must)<td>IV<td>Infinitive</tr>
+<tr><td>KV<td>The verb locution "komma att" (periphrastic future)<td>SN<td>Supine</tr>
+<tr><td>SV<td>The verb "skola" (will, shall)</tr>
+<tr><td>GV<td>The verb "göra" (do, make)</tr>
+<tr><td>FV<td>The verb "få" (get)</tr>
+<tr><td>VV<td>Other verb</tr>
+<tr><td><b>Participles</b></td><td><td><b>Features</b></tr>
+<tr><td>TP<td>Perfect participle<td><td>HH<td>Person<td>PA<td>Passive</tr>
+<tr><td>SP<td>Present participle<td><td>HM<td>Compound (person)</tr>
+<tr><td><td><td><td>SM<td>Compound (non-person)</tr>
+<tr><td><b>Adverbs</b></td><td><td><b>Features</b></tr>
+<tr><td>AB<td>Adverb<td>DA<td>Definite</tr>
+<tr><td><td><td>FA<td>Interrogative</tr>
+<tr><td><td><td>NA<td>Negative</tr>
+<tr><td><td><td>TA<td>Total</tr>
+<tr><td><td><td>RA<td>Relative</tr>
+<tr><td><td><td>JA<td>Comparing</tr>
+<tr><td><td><td>KP<td>Comparative</tr>
+<tr><td><td><td>SU<td>Superlative</tr>
+<tr><td><td><td>JU<td>"ju" ... "desto" (the [more] ... the [more])</tr>
+<tr><td><td><td>SA<td>"så" ([if] ... then)</tr>
+<tr><td><td><td>OC<td>Copulative</tr>
+<tr><td><td><td>MN<td>Adversative</tr>
+<tr><td><td><td>KU<td>Explanative</tr>
+<tr><td><td><td>KS<td>Consecutive</tr>
+<tr><td><td><td>ZK<td>Other conjunctional adverb</tr>
+<tr><td><td><td>ZA<td>Other adverb</tr>
+<tr><td><b>Prepositions</b></td><td><td><b>Features</b></tr>
+<tr><td>PR<td>Preposition<td>KP<td>Comparative</tr>
+<tr><td><td><td>SU<td>Superlative</tr>
+<tr><td><b>Infinitive markers</b></td><td><td><b>Features</b></tr>
+<tr><td>IM<td>Infinitive marker</tr>
+<tr><td><b>Coordinating conjunctions</b></td><td><td><b>Features</b></tr>
+<tr><td>++<td>Coordinating conjunction<td>OC<td>Copulative<td>PG<td>Progressive</tr>
+<tr><td><td><td>EL<td>Disjunctive<td>KR<td>Correction</tr>
+<tr><td><td><td>MN<td>Adversative</tr>
+<tr><td><td><td>KU<td>Explanative</tr>
+<tr><td><td><td>KS<td>Consecutive</tr>
+<tr><td><b>Subordinating conjunctions</b></td><td><td><b>Features</b></tr>
+<tr><td>UK<td>Subordinating conjunction<td>TE<td>Temporal</tr>
+<tr><td><td><td>KU<td>Causal</tr>
+<tr><td><td><td>KS<td>Consecutive</tr>
+<tr><td><td><td>KD<td>Conditional</tr>
+<tr><td><td><td>KM<td>Comparative</tr>
+<tr><td><td><td>KC<td>Concessive</tr>
+<tr><td><td><td>FI<td>Final</tr>
+<tr><td><td><td>AT<td>General "att" (that)</tr>
+<tr><td><td><td>OM<td>Conditional "om/huruvida" (if/whether)</tr>
+<tr><td><b>Punctuation</b></td><td><td><b>Features</b></tr>
+<tr><td>IK<td>Comma</tr>
+<tr><td>IP<td>Period</tr>
+<tr><td>I?<td>Question mark</tr>
+<tr><td>IU<td>Exclamation mark</tr>
+<tr><td>IQ<td>Colon</tr>
+<tr><td>IS<td>Semicolon</tr>
+<tr><td>IT<td>Dash</tr>
+<tr><td>IR<td>Parenthesis</tr>
+<tr><td>IC<td>Quotation mark</tr>
+<tr><td>PU<td>List item (bullet or number)</tr>
+<tr><td>IG<td>Other punctuation mark</tr>
+<tr><td><b>Prosody/Speech management</b></td><td><td><b>Features</b></tr>
+<tr><td>EH<td>Filled pause</tr>
+<tr><td>RJ<td>Juncture - straight</tr>
+<tr><td>UJ<td>Juncture - rise</tr>
+<tr><td>NJ<td>Juncture - fall</tr>
+<tr><td><b>Miscellaneous</b></td><td><td><b>Features</b></tr>
+<tr><td>YY<td>Interjection</tr>
+<tr><td>UU<td>Exclamative or optative</tr>
+<tr><td>TT<td>Vocative</tr>
+<tr><td>ID<td>Part of idiom (multi-word unit)</tr>
+<tr><td>XX<td>Unclassifiable part-of-speech</tr>
+</table>
+</BODY>
+

@@ -1,0 +1,29 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+
+<title>Flags for Deviant Structures</title>
+</head><body bgcolor="#ffffff">
+
+<h2>Flags for Deviant Structures</h2>
+
+<p>The table below lists the different categories used to annotate nodes in order to indicate probable annotation errors caused by parsing errors, together with the frequency of each flag in the SUC part of the Swedish Treebank. Note that the flags are not mutually exclusive and that a single annotation error often triggers more than one flag. In total, 30,588 sentences have at least one flag, while 43,655 sentences have no flag.</p>
+
+<p>During the manual revision of the gold standard section of SUC, we observed that a correctly annotated sentence never gets a flag. Unfortunately, the inverse implication does not hold, but the absence of flags usually indicates that there are only minor annotation errors in the sentence. </p>
+
+<table border=1 cellpadding=3 cellspacing=3>
+<tr><td><b>Flag</b><td><b>Frequency</b><td><b>Explanation</b><td><b>Examples</b></tr>
+<tr><td>Unary<td>2764<td>Unary branching nonterminal node with a nonterminal child.<br>Permitted exception: ROOT with XP child.<td></tr>
+<tr><td>Nonterminal<td>2353<td>Node with (probably) incorrect phrase label.<td>Phrase label is ?? (unknown).<br>
+Phrase label is XP but the phrase has the typical structure of a more specific phrase (e.g., PR+PA for PP).</tr>
+<tr><td>Function<td>7318<td>Node with incorrect function label.<td>Function label is ??.</tr>
+<tr><td>ForbiddenFunction<td>7383<td>Node with function label that does not occur with this phrase type in Talbanken.<td>Preposition with function head (HD) instead of prepositional (PR).</tr>
+<tr><td>ForbiddenChild<td>13535<td>Node with child whose function label does not occur under this phrase type in Talbanken<td>
+Subject (SS) under noun phrase (NP).<br>
+Functions other than MS and punctuation under ROOT.</tr>
+<tr><td>ForbiddenSibling<td>27796<td>Node with function label that is incompatible with the function label of a sibling node.<td>Multiple occurrences of IV, SS, OO inside the same phrase.<br>Formal subject (FS) together with ordinary subject (SS).</tr>
+<tr><td>ObligatoryChild<td>17942<td>Node whose phrase label requires a child with a specific function label but no such child exists.<td>A noun phrase (NP) without either a head (HD) or at least one conjunct (CJ).</tr>
+<tr><td>ObligatorySibling<td>592<td>Node whose function label requires a sibling with a specific function label but no such sibling exists.<td>A logical subject (ES) without a formal subject (FS).<br></tr>
+</table>
+
+</body></html>
