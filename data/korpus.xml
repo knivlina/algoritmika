@@ -1,0 +1,52 @@
+<corpus>
+<text lix="29.09" ovix="79.93" nk="1.25">
+<paragraph>
+<sentence id="8f74-86ba">
+<w pos="PN" msd="PN.NEU.SIN.DEF.SUB+OBJ" lemma="|den|" lex="|den..pn.1|" ref="1" dephead="2" deprel="SS">Det</w>
+<w pos="VB" msd="VB.PRS.AKT" lemma="|vara|" lex="|vara..vb.1|" ref="2" dephead="" deprel="ROOT">är</w>
+<w pos="JJ" msd="JJ.POS.NEU.SIN.IND.NOM" lemma="|iskall|" lex="|iskall..av.1|" ref="3" dephead="2" deprel="SP">iskallt</w>
+<w pos="AB" msd="AB" lemma="|här|" lex="|här..ab.1|" ref="4" dephead="5" deprel="PA">här</w>
+<w pos="PP" msd="PP" lemma="|på|" lex="|på..pp.1|" ref="5" dephead="2" deprel="RA">på</w>
+<w pos="NN" msd="NN.UTR.SIN.DEF.NOM" lemma="|gård|" lex="|gård..nn.1|gård..nn.2|" ref="6" dephead="5" deprel="PA">gården</w>
+<w pos="MAD" msd="MAD" lemma="|" lex="|" ref="7" dephead="2" deprel="IP">.</w>
+</sentence>
+<sentence id="83b1-835f">
+<w pos="AB" msd="AB" lemma="|åtminstone|" lex="|åtminstone..ab.1|" ref="1" dephead="2" deprel="CA">Åtminstone</w>
+<w pos="PP" msd="PP" lemma="|för|" lex="|för..pp.1|" ref="2" dephead="" deprel="ROOT">för</w>
+<w pos="IE" msd="IE" lemma="|att|" lex="|att..sn.1|" ref="3" dephead="2" deprel="PA">att</w>
+<w pos="VB" msd="VB.INF.AKT" lemma="|vara|" lex="|vara..vb.1|vara..vb.2|" ref="4" dephead="3" deprel="IF">vara</w>
+<w pos="NN" msd="NN.NEU.SIN.DEF.NOM" lemma="|slut|" lex="|slut..nn.1|" ref="5" dephead="4" deprel="SP">slutet</w>
+<w pos="PP" msd="PP" lemma="|på|" lex="|på..pp.1|" ref="6" dephead="5" deprel="ET">på</w>
+<w pos="NN" msd="NN.UTR.SIN.IND.NOM" lemma="|december|" lex="|december..nn.1|" ref="7" dephead="6" deprel="PA">december</w>
+<w pos="MAD" msd="MAD" lemma="|" lex="|" ref="8" dephead="2" deprel="IP">.</w>
+</sentence>
+<sentence id="8edf-8abb">
+<w pos="DT" msd="DT.NEU.SIN.DEF" lemma="|en|den|" lex="|en..al.1|den..pn.1|" ref="01" dephead="03" deprel="DT">Det</w>
+<w pos="JJ" msd="JJ.SUV.UTR+NEU.SIN+PLU.DEF.NOM" lemma="|sen|" lex="|sen..av.1|" ref="02" dephead="03" deprel="DT">senaste</w>
+<w pos="NN" msd="NN.NEU.SIN.DEF.NOM" lemma="|decennium|" lex="|decennium..nn.1|" ref="03" dephead="07" deprel="SS">decenniet</w>
+<w pos="VB" msd="VB.PRS.AKT" lemma="|ha|" lex="|ha..vb.1|" ref="04" dephead="" deprel="ROOT">har</w>
+<w pos="PN" msd="PN.NEU.SIN.DEF.SUB+OBJ" lemma="|den|" lex="|den..pn.1|" ref="05" dephead="04" deprel="OO">det</w>
+<w pos="AB" msd="AB.KOM" lemma="|ofta|" lex="|ofta..ab.1|" ref="06" dephead="04" deprel="TA">oftare</w>
+<w pos="VB" msd="VB.SUP.AKT" lemma="|vara|" lex="|vara..vb.1|" ref="07" dephead="04" deprel="VG">varit</w>
+<w pos="NN" msd="NN.NEU.SIN.IND.NOM" lemma="|regn|" lex="|regn..nn.1|" ref="08" dephead="07" deprel="SP">regn</w>
+<w pos="KN" msd="KN" lemma="|" lex="|" ref="09" dephead="08" deprel="HD">än</w>
+<w pos="NN" msd="NN.UTR.SIN.IND.NOM" lemma="|snö|" lex="|snö..nn.1|" ref="10" dephead="08" deprel="HD">snö</w>
+<w pos="PP" msd="PP" lemma="|om|" lex="|om..pp.1|" ref="11" dephead="08" deprel="HD">om</w>
+<w pos="NN" msd="NN.UTR.SIN.DEF.NOM" lemma="|julhelg|" lex="|julhelg..nn.1|" ref="12" dephead="08" deprel="HD">julhelgen</w>
+<w pos="MAD" msd="MAD" lemma="|" lex="|" ref="13" dephead="04" deprel="IP">.</w>
+</sentence>
+<sentence id="8103-8955">
+<w pos="KN" msd="KN" lemma="|men|" lex="|men..kn.1|" ref="01" dephead="" deprel="ROOT">Men</w>
+<w pos="PP" msd="PP" lemma="|i|" lex="|i..pp.1|" ref="02" dephead="04" deprel="+A">i</w>
+<w pos="NN" msd="NN.NEU.SIN.IND.NOM" lemma="|år|" lex="|år..nn.1|" ref="03" dephead="02" deprel="HD">år</w>
+<w pos="VB" msd="VB.PRT.AKT" lemma="|vara|" lex="|vara..vb.1|" ref="04" dephead="01" deprel="MS">var</w>
+<w pos="PN" msd="PN.NEU.SIN.DEF.SUB+OBJ" lemma="|den|" lex="|den..pn.1|" ref="05" dephead="04" deprel="SS">det</w>
+<w pos="RG" msd="RG.NOM" lemma="|elva|" lex="|elva..nl.1|" ref="06" dephead="04" deprel="SP">elva</w>
+<w pos="AB" msd="AB" lemma="|" lex="|" ref="07" dephead="08" deprel="CA">minus</w>
+<w pos="PP" msd="PP" lemma="|på|" lex="|på..pp.1|" ref="08" dephead="06" deprel="TA">på</w>
+<w pos="NN" msd="NN.UTR.SIN.DEF.NOM" lemma="|" lex="|" ref="09" dephead="08" deprel="PA">julaftonskvällen</w>
+<w pos="MAD" msd="MAD" lemma="|" lex="|" ref="10" dephead="04" deprel="IP">.</w>
+</sentence>
+</paragraph>
+</text>
+</corpus>
